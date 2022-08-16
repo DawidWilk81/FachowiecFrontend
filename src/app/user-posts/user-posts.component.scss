@@ -1,0 +1,105 @@
+@import "../../scss/_mixins.scss";
+
+#optionButtons{
+    @include bodyBuilder(12vw, 2vh);
+    position: absolute;
+    top:10px;
+    right: 10px;
+    @media only screen and (max-width: 600px) {
+        @include bodyBuilder(25vw, 2vh);
+    }
+}
+
+#wholeCont{ 
+    background-color: #212529;
+    @include bodyBuilder(99.8, auto);
+    border-top:0.4vh solid #11151a;
+    color:white;
+    min-height: 94.4vh;
+    .row{
+        @include bodyBuilder(100%, 100%);
+
+        #postContainer{
+            @include bodyBuilder(100%, 40vh);
+            min-width: 300px;
+            @media only screen and (max-width: 600px) {
+                @include bodyBuilder(100%, 50vh);
+                font-size: 1rem;
+            }
+            background-color: #252a2e;
+            box-shadow: -2px -2px 7px rgb(8, 8, 8)  inset ,3px 3px 5px #212529  inset;
+            position: relative;
+            #avatar{
+                @include bodyBuilder(40%, 100%);
+                border-radius: 15px;
+                img{
+                    @include bodyBuilder(100%, 100%);
+                    border-radius: 15px;
+                    box-shadow: -2px -2px 7px rgb(8, 8, 8) inset, 3px 3px 5px rgb(0, 0, 0);
+                }
+            }
+
+            #descCont{
+                @include bodyBuilder(60%, 100%);
+                #proffesion{
+
+                    @include bodyBuilder(100%, 20%);
+                    border:1px solid black;
+                    box-shadow: -2px -2px 7px rgb(8, 8, 8), 3px 3px 5px #212529;
+                }
+                
+
+                #desc{
+                    @include bodyBuilder(100%, 70%);
+                    box-shadow: -4  px -4px 7px rgb(8, 8, 8)  inset ,3px 3px 5px #212529  inset;
+                    font-size: 1.1em;
+                    overflow: auto;
+                }
+            }
+        }
+
+    }
+}
+
+fa-icon{
+    color:wheat;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover{
+        top:12px;
+        color:#fdfdfd;
+        font-size: 1.5em;
+    }
+}
+
+#last{
+    &:hover{
+        color:red;
+    }
+}
+#warning{
+    z-index: 10;
+    position: absolute;
+    left:40vw;
+    top:25vh;
+    width: 30vw;
+    height: 30vh;
+    background-color: rgba(29, 29, 29, 0.925);
+    border:1px solid black;
+
+    #xMark{
+        height: 15%;
+    }
+
+    #info{
+        height: 50%;
+        z-index: 10;
+        color:white;
+        font-size: 20px;
+    }
+
+    #buttonsSection{
+        height: 20%;
+    }
+}

@@ -1,0 +1,38 @@
+<app-header-logged></app-header-logged>
+
+<div class="container-fluid" id="ogloszenieCont">
+    <div class="row">
+        <div class="col-12 col-md-4" id="userProfile">
+            <b>O wykonawcy</b>
+            <div class="col-12 d-flex justify-content-center align-items-center" id="avatar">
+                <img src='{{user.image}}' alt="userAvatar"/>
+            </div>
+            <div class="col-12 userName text-center mt-2"><b routerLink = '../../profile/{{username}}'>{{username}}</b></div>
+            <div class="col-12 mt-3 p-2 d-flex justify-content-center align-center" id="rating">
+                <fa-icon [icon]="faStar" [ngClass]="{'orange': user.avg_rating>0}"></fa-icon>
+                <fa-icon [icon]="faStar" [ngClass]="{'orange': user.avg_rating>1}"></fa-icon>
+                <fa-icon [icon]="faStar" [ngClass]="{'orange': user.avg_rating>2}"></fa-icon>
+                <fa-icon [icon]="faStar" [ngClass]="{'orange': user.avg_rating>3}"></fa-icon>
+                <fa-icon [icon]="faStar" [ngClass]="{'orange': user.avg_rating>4}"></fa-icon>
+            </div>
+            <div class="col-12 mt-2 p-2" id="userDesc">{{user.bio}}</div>
+
+        </div>
+        <div class="col-12 col-md-7 p-4 mx-auto" id="announcementDesc">
+            <div class="col-12 p-2 mt-2 title text-center align-items-center d-flex justify-content-center">{{ogloszenieClicked.title}}</div>
+            <div class="col-12 p-2 mt-2 desc">{{ogloszenieClicked.desc}}</div>
+            <div class="col-12 p-2 mt-2 category">
+                <div class="row">
+                    <div class="col-5">
+                        <b>Profesja: </b>{{ogloszenieClicked.category}} <br/><br/>
+                        <b>Miejscowość: </b>{{ogloszenieClicked.town}} <br/><br/>
+                        <b>Kontakt:</b> {{ogloszenieClicked.phone}}
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+
+    </div>
+</div>

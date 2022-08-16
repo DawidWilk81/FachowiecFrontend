@@ -1,0 +1,35 @@
+@import '../../scss/_mixins.scss';
+@import '../../scss/_variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+#registerContainer{
+    img{
+        @include bodyBuilder(100%, 100%);
+        opacity: 0.8;
+    }
+    @include bodyBuilder(auto, 94vh);
+    .row{
+        height: 100%;
+        width: 100%;
+        .registerForm{
+            background-color: #f9f9f9;
+            height: 100%;
+            box-shadow: -3px -3px 7px #ffffff74, 3px 3px 5px rgba(94, 104, 121, .288);
+        }
+    }
+}
+
+.htext{
+    position: absolute;
+    left:5%;
+    top:10%;
+    font-family: 'Bubblegum Sans', cursive;
+    color:#303030;
+    font-size: 2.4em;
+    line-height: 0.8em;
+    
+}
+
+.registerImage{
+    position: relative;
+    height: 94.4vh;
+}

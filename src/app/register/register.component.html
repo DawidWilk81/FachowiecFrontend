@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="container-fluid" id="registerContainer">
+    <div class="row">
+        <div class="col-7 d-flex justify-content-center registerImage mx-0 px-0">
+                <img src="../../assets/photo2.jpg" alt="registerImage">
+                <div class="col-8 htext">Zarejestruj się i przekaż swój problem zawodowcom.</div>  
+        </div>
+        <div class="col-5 registerForm p-0 ">
+            <div class="row p-2">
+                <form class="d-flex flex-column">
+                    <div class="mb-3">
+                      <label for="exampleInputLogin" class="form-label">Login</label>
+                      <input [(ngModel)]="user.username" name='login' type="text" class="form-control" id="exampleInputLogin" aria-describedby="emailHelp">
+                      <div id="LoginHelp" class="form-text">Login może zawierać maksymalnie 64 litery</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail" class="form-label">Email</label>
+                        <input type="email" [(ngModel)]="user.email" name='email' class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                      </div>
+                    <div class="mb-3">
+                      <label for="InputPassword1" class="form-label">Hasło</label>
+                      <input type="password" [(ngModel)]="user.password" name='password' class="form-control" id="InputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputPassword2" class="form-label">Powtórz hasło</label>
+                        <input type="password" [(ngModel)]="user.password2" name='password2' class="form-control" id="InputPassword2">
+                      </div>
+                    <button (click)='registerUser()' class="btn btn-primary">Zarejestruj się</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>

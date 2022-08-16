@@ -1,0 +1,37 @@
+@import '../../scss/_keyframes.scss';
+@import '../../scss/_variables.scss';
+@import "../../scss/_mixins.scss";
+
+.navbar-brand{
+    &:hover{
+        cursor: pointer;
+    }
+}
+#loginCard{
+    font-family: $sansFont;
+    color:whitesmoke;
+    z-index: 20;
+    @include bodyBuilder(45vw, 40vh);
+    background-color: $darkColor;
+    position: absolute;
+    animation-name: showLogin;
+    animation-duration: 0.5s;
+
+    border:2px solid black;
+    top:25%;
+    left: 25%;
+    border-radius: 10px;
+}
+.form-text{
+    font-size: 1.4rem;
+    .spanRegister{
+        
+        color: $spanRegisterColor;
+    }
+}
+
+li{
+    p{
+        cursor: pointer;
+    }
+}

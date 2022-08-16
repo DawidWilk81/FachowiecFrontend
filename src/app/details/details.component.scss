@@ -1,0 +1,78 @@
+@import '../../scss/_mixins.scss';
+
+#ogloszenieCont{
+    font-size:1.4em;
+    @include bodyBuilder(auto, 94.4vh );
+    background: rgb(249,249,249);
+    background: linear-gradient(84deg, rgba(249,249,249,1) 0%, rgba(33,37,41,1) 97%);
+    .row{
+        #userProfile{
+            -webkit-box-shadow: 14px 0px 12px -7px rgba(66, 68, 90, 1);
+            -moz-box-shadow: 14px 0px 12px -7px rgba(66, 68, 90, 1);
+            box-shadow: 14px 0px 12px -7px rgba(66, 68, 90, 1);
+            height: 94.4vh;
+            #avatar{
+                @include bodyBuilder(100%, 30%);
+                margin-top: 20px;
+                img{
+                    @include bodyBuilder(100%, 100%);
+                    border-radius: 15px;
+                    box-shadow: -3px -3px 7px #f9f9f9f9 , 3px 3px 5px rgba(33, 37, 41) ;
+                }
+            }
+
+            #rating{
+                @include bodyBuilder(100%, 5%);
+                box-shadow: -6px -6px 7px #dad8d8f9 inset , 3px 3px 5px rgba(33, 37, 41) inset;
+                -webkit-box-shadow: -6px -6px 7px #dad8d8f9 inset , 3px 3px 5px rgba(33, 37, 41) inset;
+                -moz-box-shadow: -6px -6px 7px #dad8d8f9 inset , 3px 3px 5px rgba(33, 37, 41) inset;
+
+            }
+
+            #userDesc{
+                @include bodyBuilder(100%, 40%);
+                background-color: rgb(223, 223, 223);
+                box-shadow: -6px -6px 7px #dad8d8f9 inset , 3px 3px 5px rgba(33, 37, 41) inset;
+                -webkit-box-shadow: -6px -6px 7px #dad8d8f9 inset , 3px 3px 5px rgba(33, 37, 41) inset;
+                -moz-box-shadow: -6px -6px 7px #dad8d8f9 inset , 3px 3px 5px rgba(33, 37, 41) inset;
+            }
+
+        }
+        #announcementDesc{
+            background-color: #dbdbdbaf;
+            height: 94vh;
+            -webkit-box-shadow: -14px 0px 12px -18px rgba(66, 68, 90, 1);
+            -moz-box-shadow: -14px 0px 12px -18px rgba(66, 68, 90, 1);
+            box-shadow: -14px 0px 12px -18px rgba(66, 68, 90, 1);
+            .title{
+                border-radius: 10px;
+                height: 15%;
+                box-shadow: -6px -6px 7px #dad8d8f9, 3px 3px 5px rgba(33, 37, 41);
+                -webkit-box-shadow: -6px -6px 7px #dad8d8f9, 3px 3px 5px rgba(33, 37, 41);
+                -moz-box-shadow: -6px -6px 7px #dad8d8f9, 3px 3px 5px rgba(33, 37, 41);
+            }
+            .desc{
+                height: 40%;
+                overflow: auto;
+                box-shadow: -6px -6px 7px #dad8d8f9 inset, 3px 3px 5px rgba(33, 37, 41) inset;
+                -webkit-box-shadow: -6px -6px 7px #dad8d8f9 inset, 3px 3px 5px rgba(33, 37, 41) inset;
+                -moz-box-shadow: -6px -6px 7px #dad8d8f9 inset, 3px 3px 5px rgba(33, 37, 41) inset;
+            }
+            .category{
+                height: 40%;
+                border-radius: 10px;
+              
+            }
+        }
+    }
+   
+  
+}
+
+fa-icon{
+    color:rgba(15, 15, 15, 0.747);
+}
+
+.orange{
+ color:orange;       
+}

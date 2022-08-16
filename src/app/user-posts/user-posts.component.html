@@ -1,0 +1,38 @@
+<app-header-logged></app-header-logged>
+<div id="warning" *ngIf="warning">
+    
+    <div class="col-12 p-2 d-flex justify-content-end" id="xMark">
+        ss
+        <fa-icon [icon]="xmark" (click)="closeWarning()" id='xmarkIcon'></fa-icon>
+    </div>
+
+    <div class="col-12 p-2" id="info">
+        <h1>Czy na pewno chcesz usunąć ogłoszenie?</h1>
+    </div>
+
+    <div class="col-12 p-3">
+        <button class="btn btn-danger" id="buttonsSection"  (click)="delete()">Usuń</button>
+        <button class="btn btn-warning mx-2" id="buttonsSection" (click)="closeWarning()">Wróć</button>
+    </div>
+
+</div>
+<div class="container-fluid" id="wholeCont">
+    <div class="row">
+        <div class="col-12 p-3 mt-3 d-flex" id="postContainer" *ngFor="let ogloszenie of ogloszenia">
+            <div class="col-6" id="avatar"><img [src]="imageUrl"/></div>
+            <div class="col-6 p-2 mt-3" id="descCont">
+                <div class="col-12 p-3 text-center" id="proffesion"><h2>{{ogloszenie.title}}</h2></div>
+                <div class="col-12 mt-2 p-2" id="desc">{{ogloszenie.desc}}</div>
+            </div>
+            <div id="optionButtons" class="d-flex flex-end">
+                <div class="col-4">
+                    <fa-icon [icon]="pencil" routerLink={{ogloszenie.id}}></fa-icon>
+                </div>
+                <div class="col-4">
+                    <fa-icon [icon]="xmark" id="last" (click)="showWarning(ogloszenie)"></fa-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+

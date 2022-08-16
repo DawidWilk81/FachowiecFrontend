@@ -1,0 +1,120 @@
+@import '../header/header.component.scss';
+@import '../../scss/_mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
+#loginCard{
+    z-index: 100;
+}
+
+.wholeContainer{
+    transition: 0.3s;
+    @include bodyBuilder(auto, 90vh);
+    background-color: #f9f9f9;
+    .leftSide{
+        @include bodyBuilder(45%, 94vh);
+        box-shadow: -3px -3px 7px #ffffff74, 3px 3px 5px rgba(94, 104, 121, .288);
+        .avatarCont{
+            width: 100%;
+            height: 25vh;
+
+            .userIcon{
+                font-size: 9rem;
+                @media screen and (max-width: 600px) 
+                {
+                    font-size: 6rem;
+                }
+            }
+            #avatar{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                @include bodyBuilder(16vw, 100%);
+                background-color:beige;
+                color:rgb(206, 206, 206);
+                box-shadow: -3px -3px 7px beige, 3px 3px 5px rgba(94, 104, 121, .288);
+                @media screen and (max-width: 600px) 
+                {
+                    width: 100%;
+                    
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .rightSide{
+        font-family: 'Merriweather', serif;
+        @include bodyBuilder(55%, 94.4vh);
+        position: relative;
+        .col-12{
+            height: 100%;
+        }
+        .avatarCont{
+            height: 100%;
+        }
+        .textH2{
+            position: absolute;
+                left:20px;
+                top:40px;
+            @include bodyBuilder(90%, 1vh);
+            a{
+                word-spacing: 3px;
+                h2{
+                    font-size:2.8vw;
+                    line-height: 2em;
+                    color:#f1f1f1;
+                    font-weight: bold;
+                    text-shadow: 3px 3px 5px rgba(94, 104, 121, .288);
+
+                }
+            }
+        }
+        img{
+            @include bodyBuilder(100%, 100%);
+        }
+
+    }
+
+}
+
+h2{
+    color:#2c2a2a;
+}
+
+#avatarResponsive{
+    display: none;
+    @media screen and (max-width: 600px) 
+    {
+        display: block;
+        color:rgb(3, 3, 184);
+       cursor: pointer;
+        
+    }
+}
+
+#fileInput{
+    @media screen and (max-width: 600px) 
+    {
+        display: none;
+        
+    }
+}
+
+.category{
+    @include bodyBuilder(100%, 20vh);
+    .select{
+        @include bodyBuilder(100%, 50%);
+        text-align: center;
+    }
+}
+.additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
+  .select-container{
+    margin-top:10px;
+  }
+  

@@ -1,0 +1,58 @@
+<app-header-logged></app-header-logged>
+
+<div class="container-fluid homeContainer">
+    <div class="row">
+        <div class="categoryContainer mt-3 ms-2" id="categoryCont">
+            <ul id="categoryList" class="p-2">
+                <li *ngFor="let kategoria of kategorie" class="text-center m-1" (click)="check(kategoria)">
+                    {{kategoria.nazwa}}
+                </li>
+            </ul>
+            <fa-icon class='arrowIcon' [icon]="arrowDown" (click)="animateCategory()"></fa-icon>
+        </div>
+
+        <div id="Town">
+                <div class="row">
+                    <div class="col-12 p-2 town">
+                        <h4><b>Wybierz miejscowość</b></h4>
+                            <mat-form-field appearance="fill" id="townField">
+                            <mat-label>Miejscowość</mat-label>
+                            <mat-select (selectionChange)="townChange($event)">
+                                <mat-option>None</mat-option>
+                                <mat-option *ngFor="let option of options" [value]="option.town" id="bb">{{option.town}}</mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                            <br>
+                        <b>Wyszukaj: {{tag}} {{tag2}}</b><br/>
+                        <button class="btn btn-success" id="filterButton" (click)="Inp()"> Wyszukaj</button>
+                        <button class="btn btn-info mx-2" id="resetButton" (click)="clearParams()"> Resetuj</button>
+                    </div>
+                </div>
+        </div>
+        <div id="allAnnoucementsContainer" class ='p-4'>
+            <div id="announcement" class="mt-2 p-2">
+                <div class="row announcement">
+                    <div class="announcement d-flex mb-3" *ngFor="let ogloszenie of ogloszenia | paginate:  { id: 'listing_pagination',
+                    itemsPerPage: 2,
+                    currentPage: page,
+                    totalItems: ogloszeniaLen }">
+                        <div class="leftSideContainer col-5 col-md-3 p-2 ms-3">             
+                            <img src="{{ogloszenie.image}}" alt='zdjecie ogloszenia'/> 
+                        </div>
+                        <div class="rightSideContainer  col-7 col-md-9 p-1 ms-2">
+                            <div class="title col-12 p-3">{{ogloszenie.title}}</div>
+                            <div class="desc col-12 mt-2 p-2"><p>{{ogloszenie.desc}}</p>
+                                
+                            </div>
+                            <div class="info col-12 p-2 text-center" routerLink={{ogloszenie.id}}>Sprawdź fachowca</div>
+                        </div>  
+                    </div>
+                    <div>
+                        <pagination-controls  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

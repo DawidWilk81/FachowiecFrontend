@@ -1,0 +1,76 @@
+@import '../../scss/_mixins.scss';
+
+#wholeContainer{
+    color:#f9f9f9;
+    @include bodyBuilder(100vw, auto);
+    background-color: rgb(34, 37, 41);
+    box-shadow: -3px -3px 7px #f9f9f9f9 , 3px 3px 5px rgba(33, 37, 41);
+    min-height: 94.4vh;
+    .row{
+        .hrLike{
+            width: 100%;
+            height: 2px;
+            background-color: rgb(19, 20, 22);
+            
+        }
+        .avatarCont{
+            @include bodyBuilder(100%, 25vh);
+            
+            #avatar{
+                min-width: 140px;
+                @include bodyBuilder(30vw, 100%);
+                box-shadow: -3px -3px 7px rgba(33, 37, 41), 3px 3px 5px #000000da;
+                border-radius: 15px;
+                img{
+                    @include bodyBuilder(100%, 100%);
+                    border-radius: 15px;
+                    box-shadow: -3px -3px 7px #000000da inset, 3px 3px 5px rgba(33, 37, 41) inset;
+
+                }
+            }
+        }
+
+        .changeAvatar{
+            @include bodyBuilder(100%, 10vh);
+            text-align: center;
+            font-size: 16px;
+            #avatarInput{
+                @media screen and (max-width: 600px) 
+                {
+                    display: none;
+                    color:#f9f9f9f9;
+                    cursor: pointer;
+                    
+                }
+            }
+            label{
+                cursor: pointer;
+                transition: 0.4s;
+                display: none;
+                @media screen and (max-width: 600px) 
+                {
+                    display: block;
+                    color:#f9f9f9f9;
+                    cursor: pointer;
+                    
+                }
+                &:hover{
+                    font-size:20px;
+                }
+            }
+        }
+    }
+}
+
+#bioArea{
+    @include bodyBuilder(100%, 20vh);
+    font-size: 16px;
+}
+#sendFormButton{
+    @include bodyBuilder(100%, 5vh);
+    border-radius: 15px;
+}
+#choiceList{
+    width: 100%;
+    text-align: center;
+}

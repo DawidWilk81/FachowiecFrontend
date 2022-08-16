@@ -1,0 +1,72 @@
+<app-header-logged></app-header-logged>
+<div class="container" id="wholeContainer">
+    <div class="row profileRow m-0 p-0">
+        <div class="mb-3  mt-4 avatarCont d-flex justify-content-center">
+            <div id="avatar">
+                <img src={{fachowiec.image}} alt='userProfileImage'/>
+                <div class="col-12 m-2"><p><b>{{worker.username}}</b></p></div>
+            </div>
+        </div>
+        <div class="hrLike"></div>
+        <div class="col-12 d-flex justify-content-center">
+            <b>ocena</b><br>
+            <fa-icon [icon]="faStar" [ngClass]="{'orange': fachowiec.avg_rating>0}"></fa-icon>
+            <fa-icon [icon]="faStar" [ngClass]="{'orange': fachowiec.avg_rating>1}"></fa-icon>
+            <fa-icon [icon]="faStar" [ngClass]="{'orange': fachowiec.avg_rating>2}"></fa-icon>
+            <fa-icon [icon]="faStar" [ngClass]="{'orange': fachowiec.avg_rating>3}"></fa-icon>
+            <fa-icon [icon]="faStar" [ngClass]="{'orange': fachowiec.avg_rating>4}"></fa-icon>
+        </div>  
+        <div class="col-12 d-flex justify-content-center align-center">
+            <b>Liczba ocen {{fachowiec.avg_rating}}</b>
+        </div>
+            <div class="col-12 text p-2 mt-2">
+                {{fachowiec.bio}}
+            </div>
+
+    </div>
+</div>
+<div class="container commentsContainer">
+    <div class="row commentRow mt-1 mx-0 p-2">
+        <div class="col-12 addComment">
+            <form>
+                <h1>Oceń fachowca</h1>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Tytuł komentarza</label>
+                  <input type="text" id="commentTitle" class="form-control" placeholder="np. Najlepszy glazurnik" name='title' [(ngModel)]="comment.title">
+                </div>
+                <div class="form-group mt-2">
+                  <label for="commentValue">Treść komentarza</label>
+                  <textarea class="form-control" id="commentValue" rows="3" [(ngModel)]="comment.commentValue" name="commentValue"></textarea>
+                </div>
+                <div class="col-12">
+                    <b>ocena: {{comment.stars}}</b>
+                    <div class="col-12" id="rating align-center">
+                    <fa-icon *ngFor='let rate of [1, 2, 3, 4, 5]' [icon]="faStar" name="star" (mouseenter)="rateHover(rate)"
+                    [ngClass]="{'purple': rateHovered >= rate}" (mouseleave)="rateHovered = 0" (click)="rateClicked(rate)"
+                    ></fa-icon>  
+                    </div>             
+                </div>  
+                <div class="col-12">
+                    <button class="btn btn-success mt-2" (click)="rateWorker()">Oceń</button>
+                </div>  
+              </form>
+        </div>
+        <div class="hrLike mt-2"></div>
+        <p class="my-2">Komentarze</p>
+        <div class="col-12 comments">
+            <div class="col-12 comment p-3" *ngFor="let comment of Usercomments">
+                <div class="col-12 rating d-flex justify-content-center">
+                    {{comment.commentedByusername}} ocenia na: 
+                    <fa-icon [icon]="faStar" [ngClass]="{'orange': comment.stars > 0}"></fa-icon>
+                    <fa-icon [icon]="faStar" [ngClass]="{'orange': comment.stars > 1}"></fa-icon>
+                    <fa-icon [icon]="faStar" [ngClass]="{'orange': comment.stars > 2}"></fa-icon>
+                    <fa-icon [icon]="faStar" [ngClass]="{'orange': comment.stars > 3}"></fa-icon>
+                    <fa-icon [icon]="faStar" [ngClass]="{'orange': comment.stars > 4}"></fa-icon>
+
+                </div>
+                <div class="col-12 title p-2">{{comment.title}}</div>
+                <div class="col-12 commentValue p-2">{{comment.commentValue}}</div>
+            </div>
+        </div>
+    </div>
+</div>

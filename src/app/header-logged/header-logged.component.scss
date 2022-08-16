@@ -1,0 +1,13 @@
+li > p{
+    cursor: pointer;
+}
+.navbar-brand{
+    cursor: pointer;
+}
+
+li{
+    @media only screen and (max-width: 600px) {
+        width: 20vw;
+        text-align: center;
+    }
+}

@@ -1,0 +1,77 @@
+<div id="loginCard" class='p-3'*ngIf="loginCard">
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputLogin" class="form-label">Login</label>
+        <input type="text" [(ngModel)]='userLogin.username' class="form-control" name='username' id="exampleInputLogin" aria-describedby="LoginInput">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Hasło</label>
+        <input type="password" [(ngModel)]='userLogin.password' name='password' class="form-control" id="exampleInputPassword1">
+      </div>
+      <button type="submit" (click)='login()'class="btn btn-primary ms-auto">Zaloguj się</button>
+      <hr>
+      <div class="form-text">Nie masz Konta? <span class="spanRegister" routerLink="register">zarejestuj się</span></div>
+    </form>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container-fluid">
+      <a class="navbar-brand " href="#">Fachowiec</a>
+      <button class="navbar-toggler" type="button" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" (click)="navbarCollapsed = !navbarCollapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse navbar-expand" id="navbarText" [ngbCollapse]="navbarCollapsed" >
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" >Ogłoszenia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showLoginCard()">Zaloguj się</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" >FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid bg-aqua wholeContainer" id="wholeContainer">
+    <div class="row text-center" id="RegisterRoww" *ngIf="lewaStrona">
+        <div class="col-8 leftSide">
+        <form class="d-flex p-3 flex-column mt-5 registerForm" id="registerForm">
+            <div class="mb-3">
+                <label for="InputLogin" class="form-label">Login</label>
+                <input type="text" [(ngModel)]="user.username" name="login" class="form-control" id="InputLogin" aria-describedby="emailHelp">
+                
+                <div id="login" *ngIf = 'errorLogin' class="form-text d-none d-md-block">Podany login jest wpisany nieprawidłowo(max 64 liter)</div>
+              </div>
+            <div class="mb-3 ">
+              <label for="exampleInputEmail1"  class="form-label">Email address</label>
+              <input type="text" class="form-control" [(ngModel)]="user.email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+              
+            </div>
+            <div class="mb-3 password">
+              <label for="exampleInputPassword1" class="form-label" >Hasło</label>
+              <input type="password" [(ngModel)]="user.password" name="password" class="form-control" id="password1">
+              <small *ngIf="errorHaslo">Podane hasła są zbyt krótkie lub zbyt długie</small>
+              <small *ngIf="errorHasloEq">Podane hasła nie są identyczne</small>
+            </div>
+            <div class="mb-3 password">
+                <label for="exampleInputPassword2" class="form-label">Potwierdź hasło</label>
+                <input type="password" [(ngModel)]="user.password2" name="password2" class="form-control" id="password2">
+                <small *ngIf="errorHaslo">Podane hasła są zbyt krótkie lub zbyt długie</small>
+                <small *ngIf="errorHasloEq">Podane hasła nie są identyczne</small>
+              </div>
+            <button type="submit" (click)='next()' *ngIf='!success' class="btn btn-primary">Przejdź dalej</button>
+      
+          </form></div>
+        <div class="col-4 rightSide">
+          <div class="col-12 ">
+            <img src='../../assets/photo1.jpg' alt="Zdjecie w rejestracji fachowca">
+          </div>      
+          <div class="col-12 textH2">
+              <a><h2>Zarejestruje się na Fachowcu i pokaż swój talent</h2></a>
+          </div>
+        </div>
+    </div>
+  </div>

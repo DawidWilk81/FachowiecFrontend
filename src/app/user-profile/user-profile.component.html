@@ -1,0 +1,21 @@
+<app-header-logged></app-header-logged>
+<div class="container" id="wholeContainer">
+    <div class="row profileRow m-0 p-0">
+        <form>
+        <div class="mb-3  mt-4 avatarCont d-flex justify-content-center">
+            <div id="avatar">
+                <img [src]="imageUrl" alt='userProfileImage'/>
+            </div>
+        </div>
+        <div class="mb-3 changeAvatar mt-2">
+            <label for="avatarInput">Zmień avatar</label><br>
+            <input type="file"  name='zmienAvatar' id='avatarInput' (change)="onImageChange($event)"/>
+          </div>
+        <div class="hrLike"></div>
+        <div class="mb-3">
+            <textarea rows=6 cols=4 class="mt-4 p-2" id="bioArea" [(ngModel)]="worker.bio" name="userBio"></textarea>
+        </div>
+        <button type="submit" class="btn-success my-2" id="sendFormButton" (click)="updateProfile()">Wyslij</button>
+        </form>
+    </div>
+</div>

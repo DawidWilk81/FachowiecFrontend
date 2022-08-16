@@ -1,0 +1,75 @@
+@import '../../scss/_mixins.scss';
+
+.wholeRow{
+    color:#f9f9f9f9;
+    @include bodyBuilder(100%, auto);
+    min-height: 94.4vh;
+    background-color: rgb(33, 37, 41);
+    #leftSide{
+        @media screen and (max-width: 600px) 
+        {
+            width: 90%; 
+        }
+        @include bodyBuilder(30%,100%);
+        background-color: #f9f9f9f9;
+        box-shadow: -3px -3px 7px #f9f9f9f9 inset, 3px 3px 5px rgba(33, 37, 41) inset;
+        border-radius: 15px;
+        #AvatarContainer{
+            @include bodyBuilder(100%, 30%);
+            border-radius: 15px;
+            img{
+                @include bodyBuilder(100%, 100%);
+                border-radius: 15px;
+            }
+        }
+        #ratingContainer{
+            color:rgb(10, 10, 32);
+            box-shadow: -3px -3px 7px #f9f9f9f9 inset, 3px 3px 5px rgba(33, 37, 41) inset;
+            @include bodyBuilder(100%, 6%);
+            font-size: 1.2em;
+        }
+        #bioContainer{
+            @include bodyBuilder(100%, 64%);
+            color:rgb(14, 13, 13);
+            font-size:1.2em;
+
+        }
+    }
+
+    #rightSide{
+        font-size: 1.2em;
+        @include bodyBuilder(65%,100%);
+
+        @media screen and (max-width: 600px) 
+        {
+            width: 100%;
+            
+        }
+        #DivForm{
+            @include bodyBuilder(100%,100%);
+        }
+        #phone{
+            @include bodyBuilder(80%, 2em);
+        }
+    }
+
+    #formSubmit{
+        @include bodyBuilder(100%, 5vh);
+    }
+}
+#choiceList{
+    width: 100%;
+    font-size: 1rem;
+}
+#announcementTextare{
+    @include bodyBuilder(100%, 30vh);
+    font-size: 1.2rem;
+    padding:10px;
+}
+fa-icon{
+    color:rgba(15, 15, 15, 0.747);
+}
+
+.orange{
+ color:orange;       
+}

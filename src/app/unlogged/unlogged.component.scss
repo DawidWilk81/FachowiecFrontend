@@ -1,0 +1,135 @@
+@import "../../scss/_mixins.scss";
+@import "../../scss/_variables.scss";
+
+.homeContainer{
+    @include bodyBuilder(100%, 150vh);
+    background-color: #ebe8e8de;
+
+    .announcementContainer{
+        @include bodyBuilder(100%, 15vh);
+        box-shadow: -3px -3px 7px #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288);
+        -webkit-box-shadow: -3px -3px 7px #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288);
+        -moz-box-shadow: -3px -3px 7px #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288);
+    }
+    .categoryContainer{
+        position: relative;
+        //Icons arrow Down
+        transition: 0.8s;
+        @include bodyBuilder(99%, 25vh);
+        background-color: $backColor;
+        box-shadow: -3px -3px 7px inset #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) inset;
+        -webkit-box-shadow: -3px -3px 7px inset #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) inset;
+        -moz-box-shadow: -3px -3px 7px inset #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) inset;
+        background-color: #e9e9e9c2;
+        // lista z kategoriami
+        
+        #categoryList {
+            @include bodyBuilder(100%, 100%);
+            li{
+            padding:10px;
+            font-size:1.5em;
+            @include bodyBuilder(24%, 20%);    
+            list-style-type: none;
+            float:left;
+            box-shadow: -3px -3px 7px  #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) ;
+            -webkit-box-shadow: -3px -3px 7px  #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) ;
+            -moz-box-shadow: -3px -3px 7px  #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) ;
+            &:hover{
+                position: relative;
+                top:2px;
+                cursor: pointer;
+            }
+            }
+        }
+
+        .arrowIcon{
+            cursor: pointer;
+            position: absolute;
+            bottom:10px;
+            right: 15px;
+            transition: 0.4s;
+            font-size: 1.7em;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+    }
+    #allAnnoucementsContainer{
+        border-top:2px solid inset rgb(117, 112, 112);
+        @include bodyBuilder(100%, auto);
+        // background-color: $backColor;
+
+        #announcement{
+            @include bodyBuilder(100%, 35vh);
+            background-color: #ebe8e8de;
+            border-radius: 15px;
+            box-shadow: -3px -3px 7px #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288);
+            -webkit-box-shadow: -3px -3px 7px #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288);
+            -moz-box-shadow: -3px -3px 7px #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288);
+            .announcement{
+                @include bodyBuilder(100%, 100%);
+                .leftSideContainer{
+                    height: 100%;
+                    background-color: #f9f9f9;
+                    border-radius: 15px 0 0 15px;
+                    box-shadow: -3px -3px 7px #f9f9f9 inset, 3px 3px 5px rgba(94, 104, 121, .288) inset;
+                    -webkit-box-shadow: -3px -3px 7px #f9f9f9 inset, 3px 3px 5px rgba(94, 104, 121, .288) inset; 
+                    -moz-box-shadow: -3px -3px 7px #f9f9f9 inset, 3px 3px 5px rgba(94, 104, 121, .288) inset;
+                    img{
+                        @include bodyBuilder(100%, 100%);
+                    }
+                }
+                .rightSideContainer{
+                    background-color: #f9f9f9;
+                    position: relative;
+                    .title{
+                        @include bodyBuilder(100%, 15%);
+                        box-shadow: -3px -3px 7px  #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) ;
+                        -webkit-box-shadow: -3px -3px 7px  #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) ;
+                        -moz-box-shadow: -3px -3px 7px  #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) ;
+                    }
+                    .desc{
+                        @include bodyBuilder(100%, 60%);
+                        box-shadow: -3px -3px 7px #f9f9f9 inset, 3px 3px 5px rgba(94, 104, 121, .288) inset;
+                        -webkit-box-shadow: -3px -3px 7px #f9f9f9 inset, 3px 3px 5px rgba(94, 104, 121, .288) inset; 
+                        -moz-box-shadow: -3px -3px 7px #f9f9f9 inset, 3px 3px 5px rgba(94, 104, 121, .288) inset;
+
+                    }
+                    .info{
+                        @include bodyBuilder(99%, 10%);
+                        border-radius: 15px;
+                        position: absolute;
+                        bottom:10px;
+                        background-color: rgba(171, 176, 185, 0.788);
+                        box-shadow: -3px -3px 7px  #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) ;
+                        -webkit-box-shadow: -3px -3px 7px  #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) ;
+                        -moz-box-shadow: -3px -3px 7px  #f9f9f9, 3px 3px 5px rgba(94, 104, 121, .288) ;
+                        &:hover{
+                            bottom:13px;
+                            cursor: pointer;
+                            background-color: rgb(171, 176, 185);;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+.town{
+    @include bodyBuilder(100%, 15%);
+    #filterButton{
+        box-shadow: -3px -3px 7px #f9f9f9 , 3px 3px 5px rgba(94, 104, 121, .288) ;
+        -webkit-box-shadow: -3px -3px 7px #f9f9f9 , 3px 3px 5px rgba(94, 104, 121, .288) ; 
+        -moz-box-shadow: -3px -3px 7px #f9f9f9 , 3px 3px 5px rgba(94, 104, 121, .288) ;
+    }
+}
+
+  mat-label{
+    color:black;
+  }
+  mat-select{
+    color:black;
+  }
+  

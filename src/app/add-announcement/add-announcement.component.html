@@ -1,0 +1,56 @@
+<app-header-logged></app-header-logged>
+<div class="container-fluid wholeContainer p-0">
+    <div class="row wholeRow m-0 p-2">
+        <div class="col-6 ms-4 mt-4 p-4" id="leftSide">
+          <div class="col-12" id="AvatarContainer">
+            <img [src]="image" />
+          </div>
+          <div class="col-12 p-2 mt-2 d-flex justify-content-center" id="ratingContainer">
+            <fa-icon [icon]="faStar" [ngClass]="{'orange': avg_rating>0}"></fa-icon>
+            <fa-icon [icon]="faStar" [ngClass]="{'orange': avg_rating>1}"></fa-icon>
+            <fa-icon [icon]="faStar" [ngClass]="{'orange': avg_rating>2}"></fa-icon>
+            <fa-icon [icon]="faStar" [ngClass]="{'orange': avg_rating>3}"></fa-icon>
+            <fa-icon [icon]="faStar" [ngClass]="{'orange': avg_rating>4}"></fa-icon>
+          </div>
+          <div class="col-12 p-2" id="bioContainer">
+            {{profile['bio']}}
+          </div>
+        </div>
+        <div class="col-6" id="rightSide">
+                <form id="announcementForm">
+                    <div class="mb-3">
+                      <label for="titleInput" class="form-label mt-3">Tytuł</label>
+                      <input type="text" class="form-control" id="titleInput" aria-describedby="Title" name="tytul" [(ngModel)]="ogloszenie.title">
+                      <div id="titleHelp" class="form-text">Powiedz innym jakie usługi oferujesz</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="announcementTextare" class="form-label mt-3">Opis</label>
+                      <textarea id="announcementTextare" name="opis" [(ngModel)]="ogloszenie.desc"></textarea><br>
+                      <small>Opowiedz co oferujesz</small>
+                    </div>
+                    <div class="mb-3">
+                      <label for="titleInput" class="form-label mt-2">Miejscowosc</label>
+                      <input type="text" class="form-control" id="TownInput" aria-describedby="Town" name="town" [(ngModel)]="ogloszenie.town">
+                    </div>
+                    <div class="mb-3">
+                      <label for = 'phone'>Numer telefonu</label><br>
+                      <input type="text" id="phone" name="phone" [(ngModel)]="ogloszenie.phone" name='phone'/>
+                    </div>
+                    <div class="mb-3">
+                      <mat-form-field appearance="fill" id="choiceList">
+                          <mat-label>Profesja</mat-label>
+                          <mat-select (selectionChange)="choice($event.value)">
+                            <mat-option *ngFor="let zawod of zawody" [value]="zawod">{{zawod.nazwa}}</mat-option>
+                          </mat-select>
+                      </mat-form-field>
+                  </div>
+                  <div class="mb-3">
+                    <label for = 'photo'>Zdjecie ogloszenia</label><br>
+                    <input type="file" id="photo" name="photo"  name='photo' class='mt-2' (change)=onImageChange($event)/>
+                  </div>
+                    <button type="submit" class="btn btn-primary" id="formSubmit" (click)="sendAnnouncement()">Wyślij</button>
+                    
+                </form>
+        </div>
+    </div>
+</div>
